@@ -126,6 +126,32 @@
   @media (max-width: 640px){
     .packages-grid{ grid-template-columns: 1fr; }
   }
+   /* STYLE DO NOWYCH CTA */
+.cta-packages{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 8px 0 0;
+}
+
+.cta-link{
+  display: inline-block;
+  background: #2B549F;
+  color: #F18C06;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(26,61,93,.15);
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.cta-link:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+
 </style>
 
 </head>
@@ -237,14 +263,22 @@
     </ul>
 <p>
   </p>
-  <a href="https://www.naffy.io/do-dna/wolnosc-od-nalogu-masz-to-w-sobie-dziennik-wsparcia-dla-uzaleznionych-GGz" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   style="background-color: #F18C06; color: #2B549F; padding: 1rem 2rem; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-block; transition: all 0.3s ease;"
-   onmouseover="this.style.backgroundColor='#2B549F'; this.style.color='#F18C06';"
-   onmouseout="this.style.backgroundColor='#F18C06'; this.style.color='#2B549F';">
-   ➡ Zmieniam to teraz!
-</a>
+ <p style="text-align:center; font-size:1.2rem; margin: 1.25rem 0 0.5rem;">
+  Zmieniam to teraz i wybieram:
+</p>
+
+<div class="cta-packages">
+  <a class="cta-link" href="https://dash.naffy.io/products/68a1eceb876f2913b2c9503c" target="_blank" rel="noopener">
+    PAKIET WOLNOŚĆ
+  </a>
+  <a class="cta-link" href="https://www.naffy.io/do-dna/pakiet-wolnosc-i-wdziecznosc-8Y7" target="_blank" rel="noopener">
+    PAKIET WOLNOŚĆ I WDZIĘCZNOŚĆ
+  </a>
+  <a class="cta-link" href="https://www.naffy.io/do-dna/pakiet-wolnosc-wdziecznosc-i-wewnetrzna-sila-25Y" target="_blank" rel="noopener">
+    PAKIET WOLNOŚĆ, WDZIĘCZNOŚĆ I WEWNĘTRZNA SIŁA
+  </a>
+</div>
+
   </div>
 </section>
 <!-- SEKCJA 3: STATYSTYKI -->
