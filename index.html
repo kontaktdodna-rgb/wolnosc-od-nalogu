@@ -175,95 +175,211 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
 
 <body style="margin: 0; font-family: 'Open Sans', sans-serif; background-color: #2B549F; color: #1A3D5D;">
 
-  <!-- SEKCJA 1: HERO -->
- <section id="hero"
-  style="
+ <!-- === SEKCJA 1: HERO + USP + CTA + PAKIETY (zmodernizowane) === -->
+<style>
+  /* Kontener */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* HERO */
+  #hero {
     position: relative;
-    padding: 6rem 2rem;
-    min-height: 420px;
+    min-height: 520px;
+    padding: 6rem 0;
+    border-radius: 12px;
     background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
     background-size: cover;
     background-position: center;
-    border-radius: 12px;">
-  <!-- Cytat po prawej, na drzewach -->
-  <div
-    style="
-      position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      max-width: 42ch;
-      text-align: right;
-      color: #fff;
-      line-height: 1.5;
-      font-size: 1.25rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,.45);
-      opacity: 0;
-      animation: heroFade 1.1s ease-out .2s forwards;">
-    <span style="display:block; font-style: italic;">
-      „Czy myślisz, że możesz, czy myślisz, że nie możesz, masz rację.”
-    </span>
-    <span style="display:block; margin-top:.5rem; font-weight:600;">
-      — Henry Ford
-    </span>
-  </div>
-</section>
+    overflow: hidden;
+  }
+  #hero::before{
+    /* delikatny overlay pod czytelność tekstu */
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.35) 100%);
+  }
+  .hero-inner{ position:relative; z-index:1; color:#fff; text-align:center; }
+  .hero-title{
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin: 0 0 1rem 0;
+  }
+  .hero-sub{
+    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+    max-width: 56ch;
+    margin: 0 auto 1.75rem auto;
+    opacity:.95;
+  }
 
-<section style="padding: 4rem 2rem; background-color: #FDBD8A; color: #000000;">
-  <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 1rem; color: #000000;">
-      Wolność od nałogu zaczyna się dziś. Masz to w sobie!
-    </h2>
-    <p style="font-size: 1.25rem; margin: 0 auto; max-width: 900px; color: #000000;">
-      Odkryj praktyczny przewodnik, który pomoże Ci zrozumieć siebie, radzić sobie z głodem, odbudować relacje i odzyskać pełną kontrolę nad życiem.
+  /* CTA */
+  .cta-row{ display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    display:inline-block;
+    padding: .9rem 1.3rem;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration:none;
+    transition: transform .12s ease, opacity .12s ease, box-shadow .12s ease;
+    box-shadow: 0 8px 22px rgba(0,0,0,.18);
+    border: 2px solid transparent;
+  }
+  /* Zgodnie z Twoją paletą: tło #2B549F i tekst #F18C06 dla CTA */
+  .btn-primary{ background:#2B549F; color:#F18C06; }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .btn-ghost{
+    background: transparent; color:#fff; border-color: rgba(255,255,255,.6);
+  }
+  .btn-ghost:hover{ transform: translateY(-2px); opacity:.9; }
+
+  /* Cytat przeniesiony niżej, subtelny */
+  .hero-quote{
+    position: relative;
+    z-index: 1;
+    color:#fff;
+    text-align: center;
+    margin-top: 2rem;
+    opacity: .9;
+    font-style: italic;
+    font-size: .95rem;
+  }
+
+  /* Sekcja USP pod HERO (na Twoim brandowym tle #FDBD8A) */
+  .usp{
+    background-color:#FDBD8A;
+    color:#000;
+    padding: 2.5rem 0 2rem 0;
+  }
+  .usp h2{
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    text-align:center; margin:0 0 .5rem 0; color:#000;
+  }
+  .usp p{ text-align:center; max-width: 70ch; margin: 0 auto; font-size:1.125rem; }
+
+  /* Pakiety */
+  .packages-section{ background:#FFF; padding: 2.5rem 0 3.5rem 0; }
+  .packages-grid{
+    display:grid; gap:1.25rem; margin-top: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+  @media (max-width: 900px){ .packages-grid{ grid-template-columns: 1fr; } }
+
+  .package-card{
+    background:#fff; border:1px solid rgba(0,0,0,.08); border-radius: 14px;
+    padding: 1.25rem 1.25rem 1.4rem 1.25rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    display:flex; flex-direction:column; gap:.75rem;
+  }
+  .package-card.featured{
+    border:2px solid #2B549F;
+    box-shadow: 0 10px 26px rgba(43,84,159,.18);
+    position:relative;
+  }
+  .package-badge{
+    display:inline-block; align-self:flex-start;
+    background:#2B549F; color:#F18C06; font-weight:700;
+    padding:.35rem .6rem; border-radius: 999px; font-size:.85rem;
+  }
+  .package-title{
+    font-size:1.25rem; margin:.2rem 0 .2rem 0; font-weight:800;
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  .package-desc{ font-size: .98rem; opacity:.9; }
+  .package-list{ margin:.25rem 0 .5rem 1.1rem; }
+  .package-list li{ margin:.2rem 0; }
+
+  .package-cta{
+    margin-top: auto;
+    display:flex; gap:.5rem; flex-wrap:wrap;
+  }
+  .package-cta .btn{ width:100%; text-align:center; }
+</style>
+
+<section id="hero" aria-label="Wolność od nałogu – sekcja startowa">
+  <div class="container hero-inner">
+    <h1 class="hero-title">Wolność od nałogu zaczyna się dziś. Masz to w sobie.</h1>
+    <p class="hero-sub">
+      Praktyczny dziennik i narzędzia, które krok po kroku prowadzą Cię do życia bez uzależnienia — bez pustych teorii.
+      Konkrety, codzienne wsparcie, realne efekty.
     </p>
-  <section class="packages-section" id="pakiety">
-  <div class="packages-grid">
+    <div class="cta-row" role="group" aria-label="Główne działania">
+      <a href="#pakiety" class="btn btn-primary" aria-label="Przejdź do pakietów i rozpocznij zmianę">Rozpoczynam zmianę</a>
+      <a href="#faq" class="btn btn-ghost" aria-label="Poznaj odpowiedzi na najczęstsze pytania">Mam pytania</a>
+    </div>
 
-    <!-- BOX 1 -->
-    <article class="package-card">
-      <span class="package-badge">Pakiet podstawowy</span>
-      <h3 class="package-title">PAKIET WOLNOŚĆ</h3>
-      <p class="package-desc">
-        „Wolność od nałogu zaczyna się dziś. Masz to w sobie! Dziennik wsparcia”.
-      </p>
-      <ul class="package-list">
-        <li>Dziennik wsparcia – format cyfrowy</li>
-      </ul>
-    </article>
-
-    <!-- BOX 2 -->
-    <article class="package-card featured">
-      <span class="package-badge">Najczęstszy wybór</span>
-      <h3 class="package-title">PAKIET WOLNOŚĆ I WDZIĘCZNOŚĆ</h3>
-      <p class="package-desc">
-        „Wolność od nałogu zaczyna się dziś. Masz to w sobie! Dziennik wsparcia”
-        + „Codziennik Wdzięczności”.
-      </p>
-      <ul class="package-list">
-        <li>Dziennik wsparcia – format cyfrowy</li>
-        <li>Codziennik Wdzięczności – format cyfrowy</li>
-      </ul>
-    </article>
-
-    <!-- BOX 3 -->
-    <article class="package-card">
-      <span class="package-badge">Pełny zestaw</span>
-      <h3 class="package-title">PAKIET WOLNOŚĆ, WDZIĘCZNOŚĆ I WEWNĘTRZNA SIŁA</h3>
-      <p class="package-desc">
-        „Wolność od nałogu zaczyna się dziś. Masz to w sobie! Dziennik wsparcia”, 
-        „Codziennik Wdzięczności” oraz materiał audio „Wewnętrzna Siła” (subliminal).
-      </p>
-      <ul class="package-list">
-        <li>Dziennik wsparcia – format cyfrowy</li>
-        <li>Codziennik Wdzięczności – format cyfrowy</li>
-        <li>Subliminal „Wewnętrzna Siła” – plik audio do pobrania</li>
-      </ul>
-    </article>
-
+    <div class="hero-quote">
+      „Czy myślisz, że możesz, czy myślisz, że nie możesz, masz rację.” — Henry Ford
+    </div>
   </div>
 </section>
 
+<section class="usp" aria-label="Dlaczego to działa">
+  <div class="container">
+    <h2>Dlaczego to działa</h2>
+    <p>
+      Codzienna samoobserwacja, proste ćwiczenia i jasny plan działania zwiększają szansę utrzymania abstynencji.
+      Dostajesz gotowe narzędzia, które po prostu wdrażasz — dzień po dniu.
+    </p>
+  </div>
+</section>
+
+<section class="packages-section" id="pakiety" aria-label="Wybierz pakiet">
+  <div class="container">
+    <div class="packages-grid">
+
+      <!-- BOX 1 -->
+      <article class="package-card" aria-label="Pakiet Wolność">
+        <span class="package-badge">Pakiet podstawowy</span>
+        <h3 class="package-title">PAKIET WOLNOŚĆ</h3>
+        <p class="package-desc">
+          „Wolność od nałogu zaczyna się dziś. Masz to w sobie! Dziennik wsparcia”.
+        </p>
+        <ul class="package-list">
+          <li>Dziennik wsparcia – format cyfrowy</li>
+        </ul>
+        <div class="package-cta">
+          <a class="btn btn-primary" href="https://www.naffy.io/do-dna/wolnosc-od-nalogu-masz-to-w-sobie-dziennik-wsparcia-dla-uzaleznionych-GGz" target="_blank" rel="noopener" aria-label="Kupuję teraz Pakiet Wolność">Kupuję teraz</a>
+        </div>
+      </article>
+
+      <!-- BOX 2 (FEATURED) -->
+      <article class="package-card featured" aria-label="Pakiet Wolność i Wdzięczność">
+        <span class="package-badge">Najczęstszy wybór</span>
+        <h3 class="package-title">PAKIET WOLNOŚĆ I WDZIĘCZNOŚĆ</h3>
+        <p class="package-desc">
+          „Wolność od nałogu zaczyna się dziś. Masz to w sobie! Dziennik wsparcia”
+          + „Codziennik Wdzięczności”.
+        </p>
+        <ul class="package-list">
+          <li>Dziennik wsparcia – format cyfrowy</li>
+          <li>Codziennik Wdzięczności – format cyfrowy</li>
+        </ul>
+        <div class="package-cta">
+          <a class="btn btn-primary" href="https://www.naffy.io/do-dna/pakiet-wolnosc-i-wdziecznosc-8Y7" target="_blank" rel="noopener" aria-label="Kupuję teraz Pakiet Wolność i Wdzięczność">Kupuję teraz</a>
+        </div>
+      </article>
+
+      <!-- BOX 3 -->
+      <article class="package-card" aria-label="Pakiet Wolność, Wdzięczność i Wewnętrzna Siła">
+        <span class="package-badge">Pełny zestaw</span>
+        <h3 class="package-title">PAKIET WOLNOŚĆ, WDZIĘCZNOŚĆ I WEWNĘTRZNA SIŁA</h3>
+        <p class="package-desc">
+          „Wolność od nałogu zaczyna się dziś. Masz to w sobie! Dziennik wsparcia”,
+          „Codziennik Wdzięczności” oraz materiał audio „Wewnętrzna Siła” (subliminal).
+        </p>
+        <ul class="package-list">
+          <li>Dziennik wsparcia – format cyfrowy</li>
+          <li>Codziennik Wdzięczności – format cyfrowy</li>
+          <li>Subliminal „Wewnętrzna Siła” – plik audio do pobrania</li>
+        </ul>
+        <div class="package-cta">
+          <a class="btn btn-primary" href="https://www.naffy.io/do-dna/pakiet-wolnosc-wdziecznosc-i-wewnetrzna-sila-25Y" target="_blank" rel="noopener" aria-label="Kupuję teraz Pakiet Wolność, Wdzięczność i Wewnętrzna Siła">Kupuję teraz</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
  
     <!-- SEKCJA 2: PROBLEM -->
 <section style="padding: 2,5rem 2rem; background-color: #ffffff; color: #1A3D5D;">
