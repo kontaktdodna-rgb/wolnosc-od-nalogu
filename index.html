@@ -463,28 +463,77 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
 
   </div>
 </section>
-<!-- SEKCJA 3: STATYSTYKI -->
-<section style="padding: 4rem 2rem; background-color: #2B549F; color: #1A3D5D;">
-  <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
-    <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; margin-bottom: 2.5rem; color: #F18C06;">
-  Dlaczego potrzebujesz działać już teraz?
-</h2>
+<!-- === SEKCJA 3: STATYSTYKI (infografiki) === -->
+<section id="stats" aria-label="Dlaczego warto działać teraz"
+  style="padding: 4rem 2rem; background-color: #2B549F; color: #FFFFFF;">
+  <div style="max-width: 1100px; margin: 0 auto;">
 
-    <div style="display: flex; flex-direction: column; gap: 2rem; font-size: 1.2rem; line-height: 1.6;">
-      <div style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-        <strong>📉 Co druga osoba zrywająca z nałogiem rezygnuje w ciągu pierwszych 30 dni</strong> – brak struktury i wsparcia to główna przyczyna nawrotów.
-      </div>
+    <!-- Nagłówek -->
+    <h2 style="
+      font-family:'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      text-align:center; margin:0 0 2rem 0; color:#F18C06;">
+      Dlaczego potrzebujesz działać już teraz?
+    </h2>
 
-      <div style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-        <strong>📒 Codzienna samoobserwacja</strong> zwiększa szansę utrzymania abstynencji nawet o <strong>50%</strong>.
-      </div>
+    <!-- Grid z kartami -->
+    <div style="
+      display:grid; gap:1.25rem;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+    ">
+      <!-- Karta 1 -->
+      <article style="
+        background:#FFFFFF; color:#1A3D5D; border-radius:14px;
+        padding:1.5rem; box-shadow:0 6px 20px rgba(0,0,0,.10);
+        display:flex; flex-direction:column; gap:.5rem;">
+        <div style="font-size:2.2rem; font-weight:800; line-height:1; color:#2B549F;">
+          1 na 2
+        </div>
+        <div style="font-size:1.05rem;">
+          Osoby zrywające z nałogiem rezygnują w ciągu pierwszych <strong>30 dni</strong> — brak planu i wsparcia to najczęstsza przyczyna nawrotów.
+        </div>
+      </article>
 
-      <div style="background-color: #ffffff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-        <strong>🌍 WHO:</strong> ponad <strong>35 milionów ludzi</strong> na świecie wymaga pomocy w walce z uzależnieniami.
-      </div>
+      <!-- Karta 2 -->
+      <article style="
+        background:#FFFFFF; color:#1A3D5D; border-radius:14px;
+        padding:1.5rem; box-shadow:0 6px 20px rgba(0,0,0,.10);
+        display:flex; flex-direction:column; gap:.5rem;">
+        <div style="font-size:2.2rem; font-weight:800; line-height:1; color:#2B549F;">
+          +50%
+        </div>
+        <div style="font-size:1.05rem;">
+          <strong>Codzienna samoobserwacja</strong> i krótkie ćwiczenia zwiększają szansę utrzymania abstynencji nawet o połowę.
+        </div>
+      </article>
+
+      <!-- Karta 3 -->
+      <article style="
+        background:#FFFFFF; color:#1A3D5D; border-radius:14px;
+        padding:1.5rem; box-shadow:0 6px 20px rgba(0,0,0,.10);
+        display:flex; flex-direction:column; gap:.5rem;">
+        <div style="font-size:2.2rem; font-weight:800; line-height:1; color:#2B549F;">
+          35 mln+
+        </div>
+        <div style="font-size:1.05rem;">
+          Tyle osób na świecie wymaga pomocy w walce z uzależnieniami. Nie jesteś z tym sam(a).
+        </div>
+      </article>
     </div>
+
+    <!-- Źródła / dopisek -->
+    <p style="text-align:center; opacity:.9; margin:1rem 0 0 0; font-size:.9rem;">
+      Źródła: dane kliniczne i WHO (opracowanie własne).
+    </p>
   </div>
 </section>
+
+<!-- RWD dla gridu (możesz wkleić globalnie do <style>, jeśli wolisz) -->
+<style>
+  @media (max-width: 900px){
+    #stats > div > div { grid-template-columns: 1fr !important; }
+  }
+</style>
 <!-- SEKCJA 4: ROZWIĄZANIE – PREZENTACJA PRODUKTU -->
 <section style="padding: 4rem 2rem; background-color: #ffffff; color: #1A3D5D;">
   <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
