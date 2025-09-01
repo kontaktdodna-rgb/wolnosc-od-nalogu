@@ -534,32 +534,88 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
     #stats > div > div { grid-template-columns: 1fr !important; }
   }
 </style>
-<!-- SEKCJA 4: ROZWIĄZANIE – PREZENTACJA PRODUKTU -->
-<section style="padding: 4rem 2rem; background-color: #ffffff; color: #1A3D5D;">
-  <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
-    
-    <div style="flex: 1 1 400px;">
-      <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 2rem;">
-        Poznaj „Wolność od nałogu – masz to w sobie. Dziennik Wsparcia”
+<!-- === SEKCJA 4: ROZWIĄZANIE – PREZENTACJA PRODUKTU (poprawiona) === -->
+<section id="solution" aria-label="Poznaj rozwiązanie"
+  style="padding: 4rem 2rem; background-color: #ffffff; color: #1A3D5D;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem;">
+
+    <!-- Tekst -->
+    <div style="flex: 1 1 440px;">
+      <h2 style="font-family:'Montserrat', sans-serif; font-size: clamp(1.8rem, 3.2vw, 2.3rem); margin: 0 0 1rem 0;">
+        „Wolność od nałogu – masz to w sobie. Dziennik Wsparcia”
       </h2>
-      <p style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 1rem;">
-        To praktyczne narzędzie, które dzień po dniu pomoże Ci:
+      <p style="font-size: 1.12rem; line-height: 1.65; margin: 0 0 1rem 0; max-width: 60ch;">
+        Praktyczne narzędzie, które prowadzi Cię krok po kroku: od zrozumienia mechanizmów uzależnienia,
+        przez codzienną pracę z emocjami i głodem, po odbudowę poczucia sprawczości i wartości.
       </p>
-     <ul style="font-size: 1.1rem; line-height: 1.8; padding-left: 1rem; list-style-type: none;">
-  <li>✅ Zrozumieć mechanizmy swojego uzależnienia</li>
-  <li>✅ Zbudować indywidualny plan wyjścia</li>
-  <li>✅ Radzić sobie z głodem i kryzysami</li>
-  <li>✅ Wzmocnić relację z samym sobą</li>
-  <li>✅ Odbudować poczucie własnej wartości</li>
-</ul>
+
+      <!-- Kluczowe korzyści (estetyczne punktory) -->
+      <ul style="list-style:none; padding:0; margin: 1rem 0 1.25rem 0; font-size:1.05rem; line-height:1.6;">
+        <li style="position:relative; padding-left:1.4rem; margin:.35rem 0;">
+          <span style="position:absolute; left:0; top:.55rem; width:.55rem; height:.55rem; background:#2B549F; border-radius:50%;"></span>
+          Zrozumiesz swoje mechanizmy i wzorce zachowań.
+        </li>
+        <li style="position:relative; padding-left:1.4rem; margin:.35rem 0;">
+          <span style="position:absolute; left:0; top:.55rem; width:.55rem; height:.55rem; background:#2B549F; border-radius:50%;"></span>
+          Ułożysz **realny plan** wyjścia i utrzymania zmian.
+        </li>
+        <li style="position:relative; padding-left:1.4rem; margin:.35rem 0;">
+          <span style="position:absolute; left:0; top:.55rem; width:.55rem; height:.55rem; background:#2B549F; border-radius:50%;"></span>
+          Poradzisz sobie z głodem i kryzysami z użyciem konkretnych narzędzi.
+        </li>
+        <li style="position:relative; padding-left:1.4rem; margin:.35rem 0;">
+          <span style="position:absolute; left:0; top:.55rem; width:.55rem; height:.55rem; background:#2B549F; border-radius:50%;"></span>
+          Wzmocnisz relację z sobą i odbudujesz poczucie własnej wartości.
+        </li>
+      </ul>
+
+      <!-- Co dostajesz w środku -->
+      <div style="background:#F8FAFD; border:1px solid rgba(26,61,93,.12); border-radius:12px; padding:1rem 1.25rem; margin:0 0 1.25rem 0;">
+        <strong style="display:block; margin-bottom:.35rem;">W środku znajdziesz m.in.:</strong>
+        <div style="display:flex; gap:.5rem; flex-wrap:wrap; font-size:.98rem;">
+          <span style="background:#FDBD8A; color:#000; padding:.35rem .6rem; border-radius:999px;">Lista Strat i Zysków</span>
+          <span style="background:#FDBD8A; color:#000; padding:.35rem .6rem; border-radius:999px;">Dziennik głodu (skala + triggery)</span>
+          <span style="background:#FDBD8A; color:#000; padding:.35rem .6rem; border-radius:999px;">Technika HALT</span>
+          <span style="background:#FDBD8A; color:#000; padding:.35rem .6rem; border-radius:999px;">Plan 30-dniowy</span>
+          <span style="background:#FDBD8A; color:#000; padding:.35rem .6rem; border-radius:999px;">Ćwiczenia emocji</span>
+        </div>
+      </div>
+
+      <!-- Filar metody -->
+      <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; margin:0 0 1.25rem 0;">
+        <div style="border:1px solid rgba(26,61,93,.12); border-radius:12px; padding:.75rem; text-align:center;">
+          <div style="font-weight:800; color:#2B549F;">Codzienność</div>
+          <div style="font-size:.92rem; opacity:.9;">krótkie zadania każdego dnia</div>
+        </div>
+        <div style="border:1px solid rgba(26,61,93,.12); border-radius:12px; padding:.75rem; text-align:center;">
+          <div style="font-weight:800; color:#2B549F;">Prostota</div>
+          <div style="font-size:.92rem; opacity:.9;">zero teorii, same konkrety</div>
+        </div>
+        <div style="border:1px solid rgba(26,61,93,.12); border-radius:12px; padding:.75rem; text-align:center;">
+          <div style="font-weight:800; color:#2B549F;">Skuteczność</div>
+          <div style="font-size:.92rem; opacity:.9;">sprawdzone narzędzia</div>
+        </div>
+      </div>
+
+      <!-- CTA spójne z resztą strony -->
+      <div style="display:flex; gap:.6rem; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="#pakiety"
+           style="display:inline-block; padding:.9rem 1.3rem; border-radius:10px; font-weight:700; text-decoration:none; border:2px solid transparent; background:#2B549F; color:#F18C06; box-shadow:0 8px 22px rgba(0,0,0,.08);">
+          Zobacz pakiety
+        </a>
+        <a class="btn" href="#faq"
+           style="display:inline-block; padding:.9rem 1.3rem; border-radius:10px; font-weight:700; text-decoration:none; border:2px solid rgba(26,61,93,.25); color:#1A3D5D;">
+          Jak to działa?
+        </a>
+      </div>
     </div>
 
-    <div style="flex: 1 1 300px; text-align: center;">
-  <img src="assets/preview-dziennika.jpg"
-       alt="Podgląd stron dziennika (Lista Strat i Zysków, HALT, Głód)"
-       style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-  <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Podgląd przykładowej strony dziennika</p>
-
+    <!-- Wizualizacja / mockup -->
+    <div style="flex: 1 1 360px; text-align: center;">
+      <img src="assets/preview-dziennika.jpg"
+           alt="Podgląd stron dziennika: Lista Strat i Zysków, HALT, Dziennik głodu"
+           style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.10);">
+      <p style="font-size: .92rem; color: #6b7280; margin-top: .6rem;">Podgląd przykładowych stron dziennika</p>
     </div>
 
   </div>
