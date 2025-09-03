@@ -199,6 +199,18 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
     /* O autorce – tekst bardziej zwarty */
     #about-author p { font-size: 1rem; line-height: 1.55; }
   }
+    /* Codzienny wzór dziennika – poprawki kart */
+#daily-template .daily-grid article {
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+#daily-template .daily-grid article { padding: .9rem; }
+#daily-template .daily-grid h4 { font-size: 1rem; }
+#daily-template .daily-grid p { font-size: .95rem; line-height: 1.5; }
+
 </style>
 
 </head>
@@ -662,7 +674,8 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
     </h3>
 
     <!-- 3 kolumny z elementami dziennika -->
-    <div style="display:grid; gap:1rem; grid-template-columns: repeat(3, minmax(0,1fr)); margin: 0 auto 1.75rem auto;">
+    <div class="daily-grid"
+      style="display:grid; gap:1rem; grid-template-columns: repeat(3, minmax(0,1fr)); margin: 0 auto 1.75rem auto;">
       <article style="background:#fff; border-radius:12px; padding:1rem 1rem 1.1rem 1rem; box-shadow:0 4px 14px rgba(0,0,0,.06);">
         <h4 style="margin:.2rem 0 .5rem 0; font-weight:800; color:#2B549F;">Dzienniczek głodu</h4>
         <p style="margin:0; font-size:.98rem; line-height:1.55;">Szybki zapis objawów fizycznych i emocjonalnych + identyfikacja wyzwalaczy.</p>
