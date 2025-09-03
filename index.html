@@ -223,6 +223,31 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
   padding: 0.9rem;
 }
 
+    /* Sekcja 8: Dlaczego warto — mobile fix */
+#why > div > div {
+  grid-template-columns: 1fr !important;   /* 1 kolumna zamiast 4 */
+  gap: 1rem;
+}
+
+#why article {
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;  /* łamanie długich słów */
+  hyphens: auto;
+  padding: .9rem;           /* ciaśniejsze paddingi na tel */
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+/* Mikro-CTA pod sekcją 8 — trochę odstępu na tel */
+#why a[href="#pakiety"] {
+  display: inline-block;
+  margin-top: 1rem;
+}
+@media (min-width: 769px) and (max-width: 1024px){
+  #why > div > div { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+}
+
 </style>
 
 </head>
@@ -924,7 +949,7 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
 
 <!-- === SEKCJA O AUTORCE (pełna szerokość, bez zdjęcia) === -->
 <section id="about-author" aria-label="O autorce"
-  style="padding: 4rem 2rem; background-color:#ffffff; color:#1A3D5D;">
+  style="padding: 3rem 2rem; background-color:#ffffff; color:#1A3D5D;">
   <div style="max-width: 900px; margin: 0 auto; text-align: left;">
     <h2 style="font-family:'Montserrat',sans-serif; font-size:clamp(1.6rem,3vw,2rem); margin:0 0 1rem 0; text-align:center;">
       O autorce
@@ -944,7 +969,7 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
 
 <!-- === SEKCJA 10: FAQ (poprawiona, akordeony) === -->
 <section id="faq" aria-label="Najczęściej zadawane pytania"
-  style="padding: 4rem 2rem; background-color:#2B549F; color:#fff;">
+  style="padding: 3rem 2rem; background-color:#2B549F; color:#fff;">
   <div style="max-width: 900px; margin: 0 auto;">
     <h2 style="text-align:center; font-family:'Montserrat',sans-serif; font-size: clamp(1.6rem,3vw,2rem); margin:0 0 1.5rem 0; color:#F18C06;">
       Najczęściej zadawane pytania
@@ -1005,7 +1030,7 @@ src="https://www.facebook.com/tr?id=2672176943134011&ev=PageView&noscript=1"
 
 <!-- === SEKCJA 11: FINAŁOWY CTA (poprawiona) === -->
 <section id="final-cta" aria-label="Zakończenie i decyzja"
-  style="padding: 4rem 2rem; background-color:#1A3D5D; color:#fff; text-align:center;">
+  style="padding: 3rem 2rem; background-color:#1A3D5D; color:#fff; text-align:center;">
   <div style="max-width: 900px; margin: 0 auto;">
 
     <h2 style="font-family:'Montserrat',sans-serif; font-size: clamp(1.6rem,3vw,2rem); margin:0 0 .5rem 0;">
